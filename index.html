@@ -1,84 +1,243 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
-    <title>Getnet Moss Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #eaf1ff;
-            padding: 0;
-        }
-        nav {
-            background: #0059ff;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 750px;
-            background: white;
-            margin: 30px auto;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        h1 {
-            color: #003399;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .profile-image {
-            display: block;
-            margin: 15px auto;
-            max-width: 250px;
-            border-radius: 50%;
-            border: 3px solid #333;
-        }
-        .btn {
-            display: inline-block;
-            background: #0059ff;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            margin-top: 15px;
-            border-radius: 10px;
-            font-size: 17px;
-        }
-        .btn:hover {
-            background: #003bbb;
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ethiopia Clinic — Demo</title>
+  <meta name="description" content="Ethiopia Clinic — clean responsive demo website (Home · Services · Contact)" />
+  <style>
+    /* Simple reset */
+    :root{--accent:#0b7285;--muted:#6b7280;--bg:#f8fafc;--card:#ffffff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.45;background:var(--bg);color:#0f1724}/* Container */
+.container{max-width:1000px;margin:0 auto;padding:24px}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),#06b6d4);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+nav{display:flex;gap:12px}
+nav a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
+nav a.cta{background:var(--accent);color:white}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin:18px 0}
+.hero h1{font-size:28px;margin-bottom:8px}
+.hero p{color:var(--muted);margin-bottom:12px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,18,20,0.06)}
+
+.quick-actions{display:flex;flex-direction:column;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:0;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid #e6edf0;color:var(--accent)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px,1fr));gap:16px;margin:22px 0}
+.service{padding:16px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,1),rgba(248,250,252,1));box-shadow:0 6px 18px rgba(12,18,20,0.04)}
+.service h3{margin-bottom:8px}
+.service p{color:var(--muted);font-size:14px}
+
+/* About */
+.about{display:flex;gap:18px;align-items:center;margin:22px 0}
+.about img{width:160px;height:120px;object-fit:cover;border-radius:10px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+label{display:block;font-size:13px;margin-bottom:6px}
+input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf0;background:#fff}
+textarea{min-height:120px}
+.muted{color:var(--muted);font-size:14px}
+
+footer{margin-top:28px;padding:18px 0;color:var(--muted);text-align:center}
+
+/* Responsive */
+@media(max-width:880px){
+  .hero,.contact-grid{grid-template-columns:1fr}
+  nav{display:none}
+}
+
+/* small helpers */
+.flex{display:flex;gap:10px;align-items:center}
+.badge{background:#eef6f8;color:var(--accent);padding:6px 8px;border-radius:999px;font-weight:600}
+
+/* map */
+.map{width:100%;height:220px;border-radius:10px;overflow:hidden}
+
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HC</div>
+        <div>
+          <div style="font-weight:700">Ethiopia Clinic</div>
+          <div style="font-size:13px;color:var(--muted)">Primary care · Appointments · Teleconsult</div>
+        </div>
+      </div><nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="cta">Book Appointment</a>
+  </nav>
 
-<!-- Navigation Bar -->
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-</nav>
+  <div class="flex">
+    <a class="btn ghost" href="tel:+251928451351">Call</a>
+    <a class="btn primary" id="whatsapp" href="https://wa.me/251928451351?text=Hello%20HealthyCare%20Clinic">WhatsApp</a>
+  </div>
+</header>
 
-<!-- Main Content -->
-<div class="container">
-    <h1>Hi, I’m Dr. Getnet Moss</h1>
-    <p>Hello! I am Getnet Moss, a medical doctor. This website is my first personal project created on my phone. Here you can explore my work, photos, and contact information.</p>
-    <img class="profile-image" src="https://via.placeholder.com/250" alt="Getnet Moss Photo">
-    <a class="btn" href="about.html">Learn More About Me</a>
-</div>
+<main>
+  <section class="hero card" id="home">
+    <div>
+      <h1>Trusted local clinic — compassionate care</h1>
+      <p>Same-day appointments · Experienced clinicians · Affordable pricing. We care for adults and children — general practice, maternal care, and basic lab tests.</p>
 
-</body>
+      <div class="flex" style="margin-top:12px">
+        <a class="btn primary" href="#contact">Book appointment</a>
+        <a class="btn ghost" href="#services">Our services</a>
+      </div>
+
+      <ul style="margin-top:14px;color:var(--muted);font-size:14px;list-style:none;padding-left:0">
+        <li>✓ Appointments via phone or WhatsApp</li>
+        <li>✓ On-site rapid testing</li>
+        <li>✓ Follow-up and referrals</li>
+      </ul>
+    </div>
+
+    <aside class="card quick-actions">
+      <div style="font-weight:700;margin-bottom:6px">Quick contact</div>
+      <div class="muted">Call to speak with our receptionist</div>
+      <a class="btn primary" href="tel:+251928451351">Call +251 928 451 351</a>
+      <div style="height:1px;background:#eef2f4;margin:6px 0;border-radius:2px"></div>
+      <div style="font-weight:700">Location</div>
+      <div class="muted">Sabian, Dire Dawa, Ethiopia</div>
+      <div class="map" style="margin-top:8px">
+        <!-- placeholder map: replace src with your Google Maps iframe -->
+        <iframe src="https://www.google.com/maps?q=sabian\+diredawa&output=embed" style="border:0;width:100%;height:100%" loading="lazy"></iframe>
+      </div>
+    </aside>
+  </section>
+
+  <section id="services">
+    <h2 style="margin:16px 0">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>General Consultation</h3>
+        <p>Walk-in or scheduled consultations for acute and chronic conditions. Short wait-times and friendly staff.</p>
+      </div>
+      <div class="service">
+        <h3>Maternity & Child Care</h3>
+        <p>Pre-natal checks, immunizations, and pediatric care. Skilled nurses and referral pathways to hospitals.</p>
+      </div>
+      <div class="service">
+        <h3>Basic Lab Tests</h3>
+        <p>On-site rapid tests (malaria, pregnancy, blood glucose) and routine blood work with printed results.</p>
+      </div>
+      <div class="service">
+        <h3>Minor Procedures</h3>
+        <p>Stitching, wound care, and first-aid. Performed with sterile instruments and follow-up instructions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="card about">
+    <img src="https://images.unsplash.com/photo-1580281657521-4a9b0a14a3b8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Clinic team"/>
+    <div>
+      <h3>About Ethiopia Clinic</h3>
+      <p class="muted">Ethiopia Clinic has been serving the community with compassionate primary care. Our clinicians focus on practical, evidence-based care and quick referral when needed.</p>
+      <p style="margin-top:10px">Opening hours:</p>
+      <p class="muted">Mon–Fri: 08:00 — 18:00 · Sat: 09:00 — 13:00 · Sun: Closed</p>
+
+      <div style="margin-top:12px" class="flex">
+        <div class="badge">Experienced Staff</div>
+        <div class="badge">On-site Tests</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="margin-top:18px">
+    <h2>Book an Appointment</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <form id="contactForm">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="+251 9xx xxx xxx" required />
+            </div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>General Consultation</option>
+              <option>Maternity Check</option>
+              <option>Lab Test</option>
+              <option>Minor Procedure</option>
+            </select>
+          </div>
+
+          <div style="margin-top:10px">
+            <label for="message">Notes / Complaint</label>
+            <textarea id="message" name="message" placeholder="Short description"></textarea>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+            <button type="submit" class="btn primary">Send Request</button>
+            <div class="muted">Or message us on WhatsApp</div>
+          </div>
+
+          <div id="formResult" style="margin-top:10px;color:var(--muted)"></div>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h3>Contact & Location</h3>
+        <p class="muted">Address: Sabian Area, Dire Dawa</p>
+        <p class="muted">Phone: +251 928 451 351</p>
+        <p class="muted">WhatsApp: +251 928 451 351</p>
+        <div style="margin-top:10px"><a class="btn ghost" href="https://wa.me/251928451351?text=Hello%20I%20want%20to%20book%20an%20appointment">Message on WhatsApp</a></div>
+        <div style="margin-top:12px">
+          <h4 style="margin-bottom:8px">Clinic Map</h4>
+          <div class="map">
+            <iframe src="https://www.google.com/maps?q=sabian\+diredawa&output=embed" style="border:0;width:100%;height:100%" loading="lazy"></iframe>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © Ethiopia Clinic • Built with ❤️ • <a href="#">Privacy</a>
+</footer>
+
+  </div>  <script>
+    // simple form handler: sends content to WhatsApp as fallback
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('formResult');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      if(!name || !phone){ result.textContent = 'Please add name and phone.'; return; }
+
+      const text = encodeURIComponent(`Appointment request:\nName: ${name}\nPhone: ${phone}\nService: ${service}\nNotes: ${message}`);
+      // open WhatsApp chat with prefilled message
+      const wa = `https://wa.me/251928451351?text=${text}`;
+      window.open(wa, '_blank');
+      result.textContent = 'Opening WhatsApp to send your request — if nothing opens, call +251928451351.';
+    });
+  </script></body>
 </html>
