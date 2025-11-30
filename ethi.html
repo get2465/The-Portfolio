@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ethiopia Clinic – Book Appointment</title>
+<meta name="description" content="Book your medical appointment at Ethiopia Clinic in Diredawa via Telegram or WhatsApp. Fast and easy appointment booking.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f4f7fa;
+        color: #333;
+        line-height: 1.6;
+        padding-bottom: 140px; /* space for sticky buttons */
+        margin: 0;
+    }
+
+    header {
+        background: #0088cc;
+        color: white;
+        padding: 30px 15px;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .container {
+        background: white;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h2 {
+        color: #0088cc;
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin: 20px 0 10px;
+    }
+
+    p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    /* Sticky Buttons Container */
+    .sticky-buttons {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 90%;
+        max-width: 400px;
+        z-index: 1000;
+    }
+
+    .sticky-buttons a {
+        padding: 18px 0;
+        border-radius: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+
+    /* Telegram Button */
+    .btn-telegram {
+        background: #0088cc;
+    }
+    .btn-telegram:hover {
+        background: #0072a3;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* WhatsApp Button */
+    .btn-whatsapp {
+        background: #25D366;
+    }
+    .btn-whatsapp:hover {
+        background: #1DA851;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
+    }
+
+    footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+<header>Ethiopia Clinic</header>
+
+<div class="container">
+    <h2>📍 Diredawa, Sabian</h2>
+    <p>📞 Phone: 0928451351</p>
+    <p>⏰ Hours: Mon-Sat, 8:00 AM – 6:00 PM</p>
+    <p>📧 Email: info@ethiopiaclinic.com</p>
+
+    <h3>Book Your Medical Appointment</h3>
+    <p>Click a button below to book instantly via Telegram or WhatsApp.</p>
+</div>
+
+<!-- Sticky Buttons -->
+<div class="sticky-buttons">
+    <!-- Telegram -->
+    <a class="btn-telegram" 
+       href="https://t.me/gtmoss?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20at%20Ethiopia%20Clinic."
+       aria-label="Book appointment on Telegram">
+       📩 Telegram: @gtmoss
+    </a>
+
+    <!-- WhatsApp -->
+    <a class="btn-whatsapp" 
+       href="https://wa.me/0928451351?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20at%20Ethiopia%20Clinic."
+       aria-label="Book appointment on WhatsApp">
+       📱 WhatsApp
+    </a>
+</div>
+
+<footer>© 2025 Ethiopia Clinic. All rights reserved.</footer>
+
+</body>
+</html>
